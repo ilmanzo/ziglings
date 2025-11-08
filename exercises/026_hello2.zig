@@ -29,4 +29,5 @@ pub fn main(init: std.process.Init) !void {
     //
     // We just learned of a single statement which can accomplish this.
     stdout.print("Hello world!\n", .{});
+    try stdout.interface.print("Hello world!\n", .{});
 }
