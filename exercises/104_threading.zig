@@ -106,9 +106,13 @@ pub fn main() !void {
 
         // After the threads have been started,
         // they run in parallel and we can still do some work in between.
+<<<<<<< HEAD
         var io_instance: std.Io.Threaded = .init_single_threaded;
         const io = io_instance.io();
         try io.sleep(std.Io.Duration.fromSeconds(4), .awake);
+=======
+        std.posix.nanosleep(4, 0);
+>>>>>>> 11d8172 (forgotten thread-sleep fix added)
         std.debug.print("Some weird stuff, after starting the threads.\n", .{});
     }
     // After we have left the closed area, we wait until
