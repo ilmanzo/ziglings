@@ -6,6 +6,7 @@
 //     my_num=42
 //
 const std = @import("std");
+const io = std.Options.debug_io;
 
 const NumError = error{IllegalNumber};
 
