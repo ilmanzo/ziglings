@@ -5,6 +5,9 @@
 //
 const std = @import("std");
 
+// Instance for input/output, we'll learn how to create them later.
+const io = std.Options.debug_io;
+
 // Take note that this main() definition now returns "!void" rather
 // than just "void". Since there's no specific error type, this means
 // that Zig will infer the error type. This is appropriate in the case
