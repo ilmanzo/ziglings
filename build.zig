@@ -15,7 +15,7 @@ const print = std.debug.print;
 //     1) Getting Started
 //     2) Version Changes
 comptime {
-    const required_zig = "0.16.0-dev.2075";
+    const required_zig = "0.16.0-dev.2471";
     const current_zig = builtin.zig_version;
     const min_zig = std.SemanticVersion.parse(required_zig) catch unreachable;
     if (current_zig.order(min_zig) == .lt) {
@@ -397,9 +397,8 @@ const ZiglingStep = struct {
 
         const result = Process.run(b.allocator, io, .{
             .argv = &.{exe_path},
-            .cwd = b.build_root.path.?,
-            .cwd_dir = b.build_root.handle,
-            .max_output_bytes = max_output_bytes,
+            .cwd = .{ .path = b.build_root.path.? },
+            .stdout_limit = .limited(max_output_bytes),
         }) catch |err| {
             return self.step.fail("unable to spawn {s}: {s}", .{
                 exe_path, @errorName(err),
