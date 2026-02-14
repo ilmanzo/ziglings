@@ -16,7 +16,7 @@ jobs:
       - name: Sync from Codeberg
         run: |
           git remote add upstream https://codeberg.org/ziglings/exercises.git
-          git fetch upstream
+          git fetch upstream main --tags
           git checkout main
-          git merge upstream/main
-          git push origin main
+          git merge upstream/main --allow-unrelated-histories
+          git push origin main --tags
