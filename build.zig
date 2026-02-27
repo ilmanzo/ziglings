@@ -278,7 +278,8 @@ pub fn build(b: *Build) !void {
             return error.UnexpectedEOF;
         }
 
-        starting_exercise = try std.fmt.parseInt(u32, contents, 10);
+        const trimmed_contents = std.mem.trim(u8, contents, "\r\n");
+        starting_exercise = try std.fmt.parseInt(u32, trimmed_contents, 10);
     } else |err| {
         switch (err) {
             std.Io.File.OpenError.FileNotFound => {
