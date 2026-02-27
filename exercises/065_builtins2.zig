@@ -147,9 +147,9 @@ pub fn main() void {
 // We'll be seeing @typeName again in Exercise 070. For now, you can
 // see that it takes a Type and returns a u8 "string".
 fn maximumNarcissism(myType: type) []const u8 {
-    const indexOf = @import("std").mem.indexOf;
+    const find = @import("std").mem.find;
 
     // Turn "065_builtins2.Narcissus" into "Narcissus"
     const name = @typeName(myType);
-    return name[indexOf(u8, name, ".").? + 1 ..];
+    return name[find(u8, name, ".").? + 1 ..];
 }
