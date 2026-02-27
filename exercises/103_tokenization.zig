@@ -24,8 +24,7 @@
 // suited to understand the basic principles.
 //
 // In the following exercises we will also read and process data from
-// large files and at the latest then it will be clear to everyone how
-// useful all this is.
+// large files, it will then be clearer to you how useful all this is.
 //
 // Let's start with the analysis of the example from the Zig homepage
 // and explain the most important things.
