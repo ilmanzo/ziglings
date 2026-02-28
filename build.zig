@@ -278,7 +278,8 @@ pub fn build(b: *Build) !void {
             return error.UnexpectedEOF;
         }
 
-        starting_exercise = try std.fmt.parseInt(u32, contents, 10);
+        const trimmed_contents = std.mem.trim(u8, contents, "\r\n");
+        starting_exercise = try std.fmt.parseInt(u32, trimmed_contents, 10);
     } else |err| {
         switch (err) {
             std.Io.File.OpenError.FileNotFound => {
@@ -1146,7 +1147,7 @@ const exercises = [_]Exercise{
     },
     .{
         .main_file = "095_for3.zig",
-        .output = "1 2 4 7 8 11 13 14 16 17 19",
+        .output = "1 2 4 7 8 11 13 14 16 17 19\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15",
     },
     .{
         .main_file = "096_memory_allocation.zig",
