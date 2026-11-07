@@ -73,7 +73,7 @@ the appropriate tag.
 The Zig language is under very active development. In order to be
 current, Ziglings tracks **development** builds of the Zig
 compiler rather than versioned **release** builds. The last
-stable release was `0.17.0`, but Ziglings needs a dev build with
+stable release was `0.17.1`, but Ziglings needs a dev build with
 pre-release version "0.18.0-dev" and a build number at least as high
 as that shown in the example version check above.
 
@@ -191,7 +191,7 @@ Zig Standard Library
 * [X] Tokenization
 * [X] File handling
 
-### Version Changes
+### Breaking Changes
 
 * 2026-05-31 zig 0.17.0-dev.607 - zig build: separate the maker process from the configurer process, see[#35428](https://codeberg.org/ziglang/zig/pulls/35428) 
 * 2026-03-20 zig 0.16.0-dev.2915 - `GeneralPurposeAllocator` was changed to `DebugAllocator`
