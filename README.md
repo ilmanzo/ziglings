@@ -65,6 +65,12 @@ Note: The output of Ziglings is the unaltered output from the Zig
 compiler. Part of the purpose of Ziglings is to acclimate you to
 reading these.
 
+### Pro tip:
+Start `zig build --watch` in a second terminal; then, Zig will automatically check whether the exercise has been successfully completed every time you save!
+```
+zig build --watch
+```
+
 ## A Note About Versions
 
 **Hint:** To check out Ziglings for a stable release of Zig, you can use
